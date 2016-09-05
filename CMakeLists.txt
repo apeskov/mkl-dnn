@@ -33,7 +33,7 @@ include("cmake/MKL.cmake")
 include("cmake/Doxygen.cmake")
 
 # sdl options
-if(UNIX OR APPLE)
+if (FALSE) ##(UNIX OR APPLE)
     set(CMAKE_CCXX_FLAGS "${CMAKE_CCXX_FLAGS} -fPIE -fPIC -Wformat -Wformat-security")
     set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -D_FORTIFY_SOURCE=2")
     set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -D_FORTIFY_SOURCE=2")
@@ -72,6 +72,6 @@ enable_testing()
 include_directories(include)
 
 add_subdirectory(src)
-add_subdirectory(tests)
+#add_subdirectory(tests)
 
 install(FILES LICENSE DESTINATION share/doc/${LIB_NAME})
